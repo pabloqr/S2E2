@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const List<String> opcionesMD = <String> [ "Despejado", "Nuboso", "Nublado" ];
+
 class MainPage extends StatefulWidget {
   final String titulo;
 
@@ -12,6 +14,9 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   double _produccion = 0;
   double _frecuencia = 0;
+
+  String _momento = opcionesMD.first;
+  String _tiempo = "";
 
   @override
   Widget build (BuildContext context) 
@@ -29,6 +34,7 @@ class _MainPageState extends State<MainPage> {
       ),
       body: Column
       (
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [Center
         (
           child: Text
@@ -45,13 +51,30 @@ class _MainPageState extends State<MainPage> {
             textDirection: TextDirection.ltr,
           ),
         ),
-        //DropdownButton
-        //(
-          //items: items,
-          //onChanged: onChanged
-        //)
-        ]
+        DropdownButton
+        (
+          items: _getDropDownItems (opcionesMD),
+          value: _momento,
+          onChanged: (String? newValue) {
+            setState(() {
+              _momento = newValue!;
+            });
+          }
+        )]
       ),
     );
+  }
+
+  List<DropdownMenuItem<String>> _getDropDownItems (List<String> listaOpciones)
+  {
+    List<DropdownMenuItem<String>> menuItems = <DropdownMenuItem<String>> [];
+
+    for (int i = 0; i < listaOpciones.length; ++i) {
+
+      print (listaOpciones[i]);
+      menuItems.add (DropdownMenuItem (child: Text (listaOpciones[i]), value: listaOpciones[i],));
+    }
+
+    return menuItems;
   }
 }
