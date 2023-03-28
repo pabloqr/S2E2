@@ -5,6 +5,8 @@ class TargetEstadoInstalacion {
   double capacidad = 10000.0; // KW
   double produccion = 10.0;   // KW/h
   double frecuencia = 10.0;   // KW/h
+  MomentoDia mD = MomentoDia.Maniana;
+  Tiempo t = Tiempo.Despejado;
 
   TargetEstadoInstalacion () {}
 

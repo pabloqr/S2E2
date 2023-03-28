@@ -5,6 +5,7 @@ class Contador {
 
   void ejecutar (TargetEstadoInstalacion estadoInstalacion)
   {
-    // Mostrar datos
+    print("Producción: " + estadoInstalacion.produccion.toString());
+    print("Frecuencia: " + estadoInstalacion.frecuencia.toString());
   }
 }
