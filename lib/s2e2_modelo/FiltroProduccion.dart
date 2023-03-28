@@ -12,16 +12,16 @@ class FiltroProduccion extends FiltroSolar
   void aplicarFiltro(TargetEstadoInstalacion estadoInstalacion)
   {
     switch (estadoInstalacion.mD) {
-      case MomentoDia.Maniana:
+      case MomentoDia.maniana:
         estadoInstalacion.produccion = estadoInstalacion.capacidad;
         break;
-      case MomentoDia.Mediodia:
+      case MomentoDia.mediodia:
         estadoInstalacion.produccion = estadoInstalacion.capacidad * 1.1;
         break;
-      case MomentoDia.Tarde:
+      case MomentoDia.tarde:
         estadoInstalacion.produccion = estadoInstalacion.capacidad * 0.85;
         break;
-      case MomentoDia.Noche:
+      case MomentoDia.noche:
         estadoInstalacion.produccion = estadoInstalacion.capacidad * 0.05;
         break;
       default:
@@ -29,13 +29,13 @@ class FiltroProduccion extends FiltroSolar
     }
 
     switch (estadoInstalacion.t) {
-      case Tiempo.Despejado:
+      case Tiempo.despejado:
         estadoInstalacion.produccion = estadoInstalacion.produccion * 1.1;
         break;
-      case Tiempo.Nuboso:
+      case Tiempo.nuboso:
         estadoInstalacion.produccion = estadoInstalacion.produccion * 0.7;
         break;
-      case Tiempo.Nublado:
+      case Tiempo.nublado:
         estadoInstalacion.produccion = estadoInstalacion.produccion * 0.5;
         break;
       default:
