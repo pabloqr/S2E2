@@ -5,7 +5,7 @@ import 'TargetEstadoInstalacion.dart';
 import 'GestorFiltroSolar.dart';
 
 class OrigenInstalacionSolar {
-  TargetEstadoInstalacion _estadoInstalacion = TargetEstadoInstalacion();
+  TargetEstadoInstalacion estadoInstalacion = TargetEstadoInstalacion();
   GestorFiltroSolar _gestorFiltroSolar = GestorFiltroSolar();
 
   OrigenInstalacionSolar() {
@@ -15,9 +15,8 @@ class OrigenInstalacionSolar {
   }
 
   void actualizar() {
-    _gestorFiltroSolar.aplicarFiltros(_estadoInstalacion);
+    _gestorFiltroSolar.aplicarFiltros(estadoInstalacion);
   }
 
-  TargetEstadoInstalacion get getEstadoInstalacion => _estadoInstalacion;
   GestorFiltroSolar get getGestorFiltroSolar => _gestorFiltroSolar;
 }
