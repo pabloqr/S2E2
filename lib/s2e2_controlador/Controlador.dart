@@ -1,5 +1,5 @@
 import 'package:day_night_time_picker/day_night_time_picker.dart';
-import 'package:p2_s2e2/s2e2_modelo/TargetEstadoInstalacion.dart';
+import '../s2e2_modelo/TargetEstadoInstalacion.dart';
 
 import '../s2e2_modelo/Contador.dart';
 import '../s2e2_modelo/OrigenInstalacionSolar.dart';

@@ -1,4 +1,3 @@
-
 import 'TargetEstadoInstalacion.dart';
 
 abstract class FiltroSolar
